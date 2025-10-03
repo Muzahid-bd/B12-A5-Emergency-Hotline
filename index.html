@@ -27,7 +27,7 @@
 
       <div class="flex gap-5 my-auto">
         <div class="px-7 py-4 gap-3 bg-[#41ff6b1a] rounded-full flex">
-          <p class="my-auto font-bold text-xl">0</p>
+          <p id="nav-heart-icon" class="my-auto font-bold text-xl">0</p>
           <img
             class="w-[30px] h-[30px] my-auto"
             src="./assets/heart.png"
@@ -35,7 +35,7 @@
           />
         </div>
         <div class="px-7 py-4 gap-3 bg-[#41ff6b1a] rounded-full flex">
-          <p class="my-auto font-bold text-xl">100</p>
+          <p id="coinAvailable" class="my-auto font-bold text-xl">100</p>
           <img
             class="w-[30px] h-[30px] my-auto"
             src="./assets/coin.png"
@@ -80,12 +80,12 @@
                 src="assets/emergency.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">National Emergency Number</h3>
-              <p class="text-xl">National Emergency</p>
-              <h2 class="text-3xl font-bold mt-6">999</h2>
+              <p id="service-name-1" class="text-xl">National Emergency</p>
+              <h2 id="service-number-1" class="text-3xl font-bold mt-6">999</h2>
               <p
                 class="px-8 py-3 mt-2 bg-[#f2f2f2] rounded-full text-2xl text-gray-500 inline-block"
               >
@@ -94,12 +94,14 @@
             </div>
             <div class="grid grid-cols-2 gap-2 px-8 my-8">
               <button
+                id="copy-btn-1"
                 class="bg-white border-2 border-gray-200 text-xl text-gray-500 text-center p-3 rounded-xl min-h-[40px] gap-2"
                 type="button"
               >
                 <i class="fa-regular fa-copy pr-8"></i>Copy
               </button>
               <button
+                id="call-btn-1"
                 class="bg-[#00a63e] border-2 border-gray-200 text-xl text-white text-center p-3 rounded-xl min-h-[40px] gap-2"
                 type="button"
               >
@@ -116,7 +118,7 @@
                 src="assets/police.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Police Helpline Number</h3>
@@ -152,7 +154,7 @@
                 src="assets/fire-service.png "
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Fire Service Number</h3>
@@ -188,7 +190,7 @@
                 src="assets/ambulance.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Ambulance Service</h3>
@@ -224,7 +226,7 @@
                 src="assets/emergency.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Women & Child Helpline</h3>
@@ -260,7 +262,7 @@
                 src="assets/police.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Anti-Corruption Helpline</h3>
@@ -296,7 +298,7 @@
                 src="assets/emergency.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Electricity Helpline</h3>
@@ -332,7 +334,7 @@
                 src="assets/emergency.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Brac Helpline</h3>
@@ -368,7 +370,7 @@
                 src="assets/emergency.png"
                 alt=""
               />
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart heart-icon"></i>
             </div>
             <div class="text-left px-8">
               <h3 class="text-2xl font-bold">Bangladesh Railway Helpline</h3>
@@ -405,38 +407,23 @@
               <i class="fa-regular fa-clock pr-8 text-gray-400"></i>Call History
             </h2>
             <button
+              id="clear-btn"
               class="px-8 py-3 mt-2 bg-[#00a63e] rounded-full text-2xl text-white inline-block"
               type="button"
             >
               Clear
             </button>
           </div>
-          <div
-            class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
-          >
-            <div class="text-left col-span-2">
-              <h3 class="text-2xl font-bold">Fire Service Number</h3>
-              <p class="text-xl pt-2">999</p>
-            </div>
-            <div class="">Current Time</div>
-          </div>
-          <div
-            class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
-          >
-            <div class="text-left col-span-2">
-              <h3 class="text-2xl font-bold">Fire Service Number</h3>
-              <p class="text-xl pt-2">999</p>
-            </div>
-            <div class="">Current Time</div>
-          </div>
-          <div
-            class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
-          >
-            <div class="text-left col-span-2">
-              <h3 class="text-2xl font-bold">Fire Service Number</h3>
-              <p class="text-xl pt-2">999</p>
-            </div>
-            <div class="">Current Time</div>
+          <div id="call-history-container">
+            <!-- <div
+              class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
+            >
+              <div class="text-left col-span-2">
+                <h3 class="text-2xl font-bold">Fire Service Number</h3>
+                <p class="text-xl pt-2">999</p>
+              </div>
+              <div id="current-time">Current Time</div>
+            </div> -->
           </div>
         </div>
       </div>
