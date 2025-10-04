@@ -1,4 +1,3 @@
-const callHistoryData = [];
 // Heart Icons
 
 const heartIcons = document.querySelectorAll(".heart-icon");
@@ -40,7 +39,7 @@ document.getElementById("call-btn-1").addEventListener("click", function (e) {
 });
 
 //call history part
-
+const callHistoryData = [];
 document.getElementById("call-btn-1").addEventListener("click", function (e) {
   e.preventDefault();
   const callHistoryContainer = document.getElementById(
@@ -63,25 +62,32 @@ document.getElementById("call-btn-1").addEventListener("click", function (e) {
   }
 });
 
-for (history of callHistoryData) {
-  const callHistory = document.getElementById("call-history");
-  const currentTime = document.getElementById("current-time");
-  const div = document.createElement("div");
+// Call history clear part
+document.getElementById("clear-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.getElementById("call-history-container").innerText = "";
+  callHistoryData.length = 0;
+});
+// for (history of callHistoryData) {
+//   const callHistory = document.getElementById("call-history");
+//   const currentTime = document.getElementById("current-time");
+//   const div = document.createElement("div");
 
-  currentTime.innerText = now;
+//   currentTime.innerText = now;
 
-  div.innerHTML = `<div
-                class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
-              >
-                <div class="text-left col-span-2">
-                  <h3 class="text-2xl font-bold">${history.serviceName}</h3>
-                  <p class="text-xl pt-2">${history.serviceNumber}</p>
-                </div>
-                <div class="">${history.currentTime}</div>
-            </div>`;
-  callHistory.appendChild(div);
-}
+//   div.innerHTML = `<div
+//                 class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
+//               >
+//                 <div class="text-left col-span-2">
+//                   <h3 class="text-2xl font-bold">${history.serviceName}</h3>
+//                   <p class="text-xl pt-2">${history.serviceNumber}</p>
+//                 </div>
+//                 <div class="">${history.currentTime}</div>
+//             </div>`;
+//   callHistory.appendChild(div);
+// }
 
+// for Copy Service Number Part
 function copyFunction(idForCopy) {
   const copyText = document.getElementById(idForCopy);
   const textToCopy = copyText.innerText;
@@ -96,72 +102,54 @@ function copyFunction(idForCopy) {
     });
 }
 
+function valueUpdate(buttonClass, updateID) {
+  const copyIndication = document.querySelectorAll(buttonClass);
+
+  for (const update of copyIndication) {
+    update.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("Copy Button Clicked");
+      const oldValue = parseInt(document.getElementById(updateID).innerText);
+      const newValue = oldValue + 1;
+      document.getElementById(updateID).innerText = newValue;
+    });
+  }
+}
+
+valueUpdate(".service-number-copy-btn", "copy-update-section");
 document.getElementById("copy-btn-1").addEventListener("click", function (e) {
   e.preventDefault();
   copyFunction("service-number-1");
 });
-
-// function copyFunction(copyId) {
-//   const copyText = document.getElementById(copyId);
-//   const textToCopy = copyText.innerText || copyText.textContent; // get text
-
-//   navigator.clipboard
-//     .writeText(textToCopy)
-//     .then(() => {
-//       alert("Copied the text: " + textToCopy);
-//     })
-//     .catch((err) => {
-//       console.error("Failed to copy: ", err);
-//     });
-// }
-
-// document.getElementById("copy-btn-1").addEventListener("click", function (e) {
-//   e.preventDefault();
-//   copyFunction("service-number-1");
-// });
-
-// function copyFunction(copy) {
-//   var copyText = document.getElementById(copy);
-//   copyText.select();
-//   copyText.setSelectionRange(0, 99999);
-//   navigator.clipboard.writeText(copyText.value);
-
-//   alert("Copied the text: " + copyText.value);
-// }
-
-// document.getElementById("copy-btn-1").addEventListener("click", function (e) {
-//   e.preventDefault();
-//   console.log("copy button Clicked");
-//   copyFunction("service-number-1");
-// });
-
-// Call Buttons
-
-//   const validPin = 1234;
-//   const bank = document.getElementById("bank").value;
-//   const accountNumber = document.getElementById("account-number").value;
-
-//   const amount = parseInt(document.getElementById("add-amount").value);
-//   const pin = document.getElementById("add-pin").value;
-//   const availableBalance = parseInt(
-//     document.getElementById("available-balance").innerText
-//   );
-//   if (accountNumber.length < 11) {
-//     alert("Please Enter a Valid Account Number.");
-//     return;
-//   }
-//   if (pin != validPin) {
-//     alert("Please Enter a Valid pin Number.");
-//     return;
-//   }
-//   const totalNewAvailableBalance = amount + availableBalance;
-//   document.getElementById("available-balance").innerText =
-//     totalNewAvailableBalance;
-//   console.log(
-//     bank,
-//     accountNumber,
-//     amount,
-//     pin,
-//     availableBalance,
-//     totalNewAvailableBalance
-//   );
+document.getElementById("copy-btn-2").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-2");
+});
+document.getElementById("copy-btn-3").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-3");
+});
+document.getElementById("copy-btn-4").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-4");
+});
+document.getElementById("copy-btn-5").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-5");
+});
+document.getElementById("copy-btn-6").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-6");
+});
+document.getElementById("copy-btn-7").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-7");
+});
+document.getElementById("copy-btn-8").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-8");
+});
+document.getElementById("copy-btn-9").addEventListener("click", function (e) {
+  e.preventDefault();
+  copyFunction("service-number-9");
+});
