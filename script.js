@@ -14,34 +14,10 @@ for (const icon of heartIcons) {
   });
 }
 
-document.getElementById("call-btn-1").addEventListener("click", function (e) {
-  e.preventDefault();
-  const serviceName = document.getElementById("service-name-1").innerText;
-  const serviceNumber = document.getElementById("service-number-1").innerText;
-
-  //  coin reduce part
-  const oldValue = parseInt(document.getElementById("coinAvailable").innerText);
-
-  const newValue = oldValue - 20;
-  if (oldValue >= 20) {
-    document.getElementById("coinAvailable").innerText = newValue;
-    alert(`📞 Calling ${serviceName} ${serviceNumber}`);
-  } else {
-    alert(`❌ আপনার পর্যাপ্ত কয়েন নেই । কল করতে কমপক্ষে ২০ কয়েল লাগবে ।`);
-    return;
-  }
-  const data = {
-    serviceName: serviceName,
-    serviceNumber: serviceNumber,
-    currentTime: new Date().toLocaleTimeString(),
-  };
-  callHistoryData.push(data);
-});
-
 //call history part
 const callHistoryData = [];
-document.getElementById("call-btn-1").addEventListener("click", function (e) {
-  e.preventDefault();
+
+function callHistory() {
   const callHistoryContainer = document.getElementById(
     "call-history-container"
   );
@@ -60,7 +36,7 @@ document.getElementById("call-btn-1").addEventListener("click", function (e) {
             </div>`;
     callHistoryContainer.appendChild(div);
   }
-});
+}
 
 // Call history clear part
 document.getElementById("clear-btn").addEventListener("click", function (e) {
@@ -68,6 +44,79 @@ document.getElementById("clear-btn").addEventListener("click", function (e) {
   document.getElementById("call-history-container").innerText = "";
   callHistoryData.length = 0;
 });
+
+// call button part
+
+function callBtn(serviceNameId, serviceNumberId) {
+  const serviceName = document.getElementById(serviceNameId).innerText;
+  const serviceNumber = document.getElementById(serviceNumberId).innerText;
+
+  //  coin reduce part
+  const oldValue = parseInt(document.getElementById("coinAvailable").innerText);
+
+  const newValue = oldValue - 20;
+  if (oldValue >= 20) {
+    document.getElementById("coinAvailable").innerText = newValue;
+    alert(`📞 Calling ${serviceName} ${serviceNumber}`);
+  } else {
+    alert(`❌ আপনার পর্যাপ্ত কয়েন নেই । কল করতে কমপক্ষে ২০ কয়েল লাগবে ।`);
+    return;
+  }
+  const data = {
+    serviceName: serviceName,
+    serviceNumber: serviceNumber,
+    currentTime: new Date().toLocaleTimeString(),
+  };
+  callHistoryData.push(data);
+}
+
+document.getElementById("call-btn-1").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-1", "service-number-1");
+  callHistory();
+});
+
+document.getElementById("call-btn-2").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-2", "service-number-2");
+  callHistory();
+});
+document.getElementById("call-btn-3").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-3", "service-number-3");
+  callHistory();
+});
+document.getElementById("call-btn-4").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-4", "service-number-4");
+  callHistory();
+});
+document.getElementById("call-btn-5").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-5", "service-number-5");
+  callHistory();
+});
+document.getElementById("call-btn-6").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-6", "service-number-6");
+  callHistory();
+});
+document.getElementById("call-btn-7").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-7", "service-number-7");
+  callHistory();
+});
+document.getElementById("call-btn-8").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-8", "service-number-8");
+  callHistory();
+});
+document.getElementById("call-btn-9").addEventListener("click", function (e) {
+  e.preventDefault();
+  callBtn("service-name-9", "service-number-9");
+  callHistory();
+});
+
 // for (history of callHistoryData) {
 //   const callHistory = document.getElementById("call-history");
 //   const currentTime = document.getElementById("current-time");
