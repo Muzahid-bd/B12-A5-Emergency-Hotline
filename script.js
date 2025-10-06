@@ -32,7 +32,7 @@ function callHistory() {
                 <h3 class="text-2xl font-bold">${data.serviceName}</h3>
                 <p class="text-xl pt-2">${data.serviceNumber}</p>
               </div>
-              <div id="current-time">${now}</div>
+              <div id="current-time">${data.currentTime}</div>
             </div>`;
     callHistoryContainer.appendChild(div);
   }
@@ -116,25 +116,6 @@ document.getElementById("call-btn-9").addEventListener("click", function (e) {
   callBtn("service-name-9", "service-number-9");
   callHistory();
 });
-
-// for (history of callHistoryData) {
-//   const callHistory = document.getElementById("call-history");
-//   const currentTime = document.getElementById("current-time");
-//   const div = document.createElement("div");
-
-//   currentTime.innerText = now;
-
-//   div.innerHTML = `<div
-//                 class="bg-gray-100 rounded-xl mt-3 p-5 items-center grid grid-cols-3"
-//               >
-//                 <div class="text-left col-span-2">
-//                   <h3 class="text-2xl font-bold">${history.serviceName}</h3>
-//                   <p class="text-xl pt-2">${history.serviceNumber}</p>
-//                 </div>
-//                 <div class="">${history.currentTime}</div>
-//             </div>`;
-//   callHistory.appendChild(div);
-// }
 
 // for Copy Service Number Part
 function copyFunction(idForCopy) {
